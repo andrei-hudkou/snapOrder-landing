@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 62.4 62.4" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Facebook" style="mix-blend-mode:plus-lighter" opacity="0.5" filter="url(#filter0_f_1_4647)">
+<circle id="bg" cx="31.2" cy="31.2" r="16.8" fill="url(#paint0_linear_1_4647)"/>
+<path id="f" d="M37.4565 36.3379L38.2027 31.5961H33.5343V28.5204C33.5343 27.2228 34.1852 25.9573 36.2762 25.9573H38.4V21.9204C38.4 21.9204 36.4734 21.6 34.6323 21.6C30.7858 21.6 28.274 23.8715 28.274 27.9821V31.5961H24V36.3379H28.274V47.8014C29.1321 47.9327 30.0099 48 30.9041 48C31.7984 48 32.6762 47.9327 33.5343 47.8014V36.3379H37.4565Z" fill="var(--fill-0, white)"/>
+</g>
+<defs>
+<filter id="filter0_f_1_4647" x="-2.3998" y="-2.3999" width="67.2" height="67.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="7.2" result="effect1_foregroundBlur_1_4647"/>
+</filter>
+<linearGradient id="paint0_linear_1_4647" x1="31.2" y1="14.4" x2="31.2" y2="47.9003" gradientUnits="userSpaceOnUse">
+<stop stop-color="#18ACFE"/>
+<stop offset="1" stop-color="#0163E0"/>
+</linearGradient>
+</defs>
+</svg>

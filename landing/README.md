@@ -2,7 +2,16 @@
 
 ## What this is
 Single-file landing page for SnapOrder early access validation.
-No build step. No dependencies to install. Deploy in under 5 minutes.
+Visual design is implemented from Figma (frame node `1:1499`).
+
+**Assets:** Raster/SVG exports live in `landing/assets/`. They were pulled via the Figma Desktop MCP asset server (`localhost:3845`) while the file was open. If images break after a fresh clone, open the Figma file with **Cursor’s Figma Desktop** integration active and re-export—or replace assets manually.
+
+From the repo root, `npm run dev` starts Vite (see root `vite.config.js`) so paths resolve correctly.
+
+---
+
+## What this is (legacy)
+No standalone build step inside `landing/` — root Vite serves this folder.
 
 ---
 

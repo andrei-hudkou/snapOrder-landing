@@ -3,361 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SnapOrder — Stop losing orders in your DMs</title>
-  <meta name="description" content="Screenshot any DM conversation — we'll turn it into a tracked order you can follow up and get paid on. Built for Instagram sellers." />
-
-  <!-- Open Graph (for link previews in social / ads) -->
-  <meta property="og:title" content="Stop losing orders in your DMs" />
-  <meta property="og:description" content="Screenshot it. We'll structure it. Every DM order tracked — no CRM setup, no integrations." />
-  <meta property="og:image" content="https://snaporder.co/og-image.png" />
-  <meta property="og:url" content="https://snaporder.co" />
+  <title>SnapOrder — All your orders from DMs, tracked in one place</title>
+  <meta name="description" content="Screenshot any DM conversation — SnapOrder pulls out the details and creates a tracked order in seconds." />
+  <meta property="og:title" content="All your orders from DMs — tracked in one place" />
+  <meta property="og:description" content="Your orders come in through messages. Screenshot the conversation — we'll structure it for you." />
   <meta name="twitter:card" content="summary_large_image" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: {
-              50:  '#fff7ed',
-              100: '#ffedd5',
-              500: '#f97316',
-              600: '#ea580c',
-              700: '#c2410c',
-            }
+            figma: {
+              bg: '#f3f6fd',
+              ink: '#1d2939',
+              gray900: '#101828',
+              gray700: '#344054',
+              muted: '#797979',
+              quote: '#6b6c6f',
+              primary: '#6941c6',
+              primary600: '#7f56d9',
+              primary800: '#53389e',
+              primary200: '#e9d7fe',
+            },
           },
-          fontFamily: {
-            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-          }
-        }
-      }
-    }
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          boxShadow: {
+            heroIcon: '9.6px 4.8px 19.2px rgba(0,0,0,0.08)',
+            howCard: '0px 24px 48px rgba(83,56,158,0.06), 0px 32px 64px rgba(83,56,158,0.06)',
+          },
+        },
+      },
+    };
   </script>
-
   <style>
-    /* Subtle gradient background */
-    .hero-bg {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
-    }
-    /* Step connector line */
-    .step-line::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 100%;
-      width: 2px;
-      height: 32px;
-      background: #e2e8f0;
-      transform: translateX(-50%);
-    }
-    /* Smooth scroll */
     html { scroll-behavior: smooth; }
-    /* Input focus ring */
-    input:focus, select:focus, textarea:focus {
-      outline: 2px solid #f97316;
-      outline-offset: 2px;
-    }
+    input:focus, select:focus, textarea:focus { outline: 2px solid #6941c6; outline-offset: 2px; }
+    input[type="radio"] { accent-color: #6941c6; }
   </style>
 </head>
-
-<body class="font-sans antialiased text-slate-900 bg-white">
-
-  <!-- ═══════════════════════════════════════════════
-       HERO SECTION
-  ═══════════════════════════════════════════════ -->
-  <section class="hero-bg text-white px-6 py-16 md:py-24 text-center">
-    <div class="max-w-2xl mx-auto">
-
-      <!-- Logo / Name -->
-      <p class="text-brand-500 font-semibold tracking-widest text-xl uppercase mb-6">SnapOrder</p>
-
-      <!-- Headline — Variant A (Pain-Led) -->
-      <!-- VARIANT B ALT: "Screenshot your DM. Your order is ready in seconds." -->
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-        Stop losing orders<br/>in your DMs.
-      </h1>
-
-      <!-- Sub-headline -->
-      <p class="text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-xl mx-auto">
-        Every order you discuss on Instagram lives in a message thread.
-        Screenshot it — we'll turn it into a real order you can
-        <span class="text-white font-medium">track, follow up, and get paid on.</span>
-      </p>
-
-      <!-- CTA -->
-      <a href="#early-access"
-         class="inline-block bg-brand-500 hover:bg-brand-600 text-white font-semibold text-lg px-8 py-4 rounded-xl transition-colors duration-200 shadow-lg">
-        Get early access — it's free
-      </a>
-
-      <!-- Social proof placeholder (update once numbers are real) -->
-      <p class="text-slate-400 text-sm mt-4">Join sellers already on the waitlist</p>
-
+<body class="font-sans antialiased bg-figma-bg text-figma-gray900 overflow-x-hidden">
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+  </div>
+  <header class="relative z-20">
+    <div class="max-w-[1264px] mx-auto px-4 sm:px-6 py-4 sm:py-6 flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+      <a href="#" class="flex items-baseline gap-0 text-[26px] sm:text-4xl font-bold leading-none tracking-tight"><span class="text-figma-ink">Snap</span><span class="text-figma-primary">Order</span></a>
+      <nav class="hidden md:flex items-center gap-10 text-figma-gray900 font-semibold text-[16px]">
+        <a href="#how-it-works" class="hover:text-figma-primary transition-colors py-2">How it works</a>
+        <a href="#what-you-get" class="hover:text-figma-primary transition-colors py-2">What you get</a>
+      </nav>
+      <a href="#what-you-get" class="rounded-full bg-figma-primary hover:bg-[#5b32b3] text-white font-semibold text-sm sm:text-base px-5 sm:px-[39px] py-2.5 sm:py-3.5 transition-colors shadow-sm shrink-0">Get early access</a>
+    </div>
+  </header>
+  <section class="relative z-10 max-w-[1264px] mx-auto px-4 sm:px-6 pt-2 sm:pt-4 pb-12 sm:pb-16 md:pb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,576px)] gap-8 sm:gap-12 lg:gap-x-16 lg:gap-y-6 lg:items-center">
+      <h1 class="text-figma-ink font-semibold text-[2rem] sm:text-5xl lg:text-[56px] leading-tight sm:leading-[56px] lg:leading-[1.08] lg:col-start-1 lg:row-start-1 lg:pl-[10px]">All your orders from DMs - tracked in one place</h1>
+      <p class="text-figma-muted font-medium text-base sm:text-xl leading-7 sm:leading-8 w-full lg:col-start-1 lg:row-start-2 lg:pl-[10px]">Your orders come in through messages.<br class="hidden sm:block" /> Screenshot the conversation - SnapOrder pulls out the details and creates a tracked order in seconds.</p>
+      <div class="relative w-full max-w-[440px] sm:max-w-[420px] lg:max-w-[576px] mx-auto shrink-0 justify-self-center lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:mx-0 lg:justify-self-end">
+        <img src="assets/a044f8a82dc67c8080c654a092babb1359b9acdf.png" alt="Seller and DM channel icons" class="w-full h-auto pointer-events-none select-none" />
+      </div>
+      <div class="pt-1 lg:col-start-1 lg:row-start-3 lg:pl-[10px]">
+        <a href="#what-you-get" class="inline-flex items-center gap-3 sm:gap-5 rounded-full bg-figma-ink hover:bg-[#0f1728] text-white font-semibold text-sm sm:text-base px-5 sm:px-[33px] py-2.5 sm:py-3.5 transition-colors"><span>Get early access - it's free</span><span class="inline-flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center" aria-hidden="true"><img src="assets/8e6b11f931dd5fada05dd716a377085a27ccdc8a.svg" alt="" class="h-5 w-5 sm:h-6 sm:w-6" /></span></a>
+      </div>
     </div>
   </section>
-
-  <!-- ═══════════════════════════════════════════════
-       PAIN MIRROR SECTION
-  ═══════════════════════════════════════════════ -->
-  <section class="bg-slate-50 px-6 py-16">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
-        Sound familiar?
-      </h2>
-      <div class="space-y-4 text-left max-w-lg mx-auto">
-        <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border border-slate-100">
-          <span class="text-2xl">😬</span>
-          <p class="text-slate-700">"I have 200 DMs and no system — I'm terrified I've forgotten someone's order."</p>
+  <section class="relative z-10 px-4 sm:px-6 py-8 sm:py-10 md:py-12">
+    <div class="max-w-[560px] mx-auto flex flex-col gap-5 sm:gap-6 items-center">
+      <h2 class="text-figma-ink font-semibold text-[30px] sm:text-4xl text-center w-full">Sound familiar?</h2>
+      <div class="w-full flex flex-col gap-2">
+        <div class="flex gap-3 sm:gap-6 items-center rounded-full px-2 sm:px-[14px] py-3 sm:py-4">
+          <div class="shrink-0 rounded-[30px] bg-white p-2 sm:p-2.5 text-[28px] sm:text-[2rem] leading-none">😬</div>
+          <p class="text-figma-quote text-sm sm:text-base leading-5 sm:leading-6">"I have 40 DMs with orders a week and no system — I'm terrified I've forgotten someone's order."</p>
         </div>
-        <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border border-slate-100">
-          <span class="text-2xl">😩</span>
-          <p class="text-slate-700">"A customer messaged asking about their order and I couldn't remember the details."</p>
+        <div class="flex gap-3 sm:gap-6 items-center rounded-full px-2 sm:px-[14px] py-3 sm:py-4">
+          <div class="shrink-0 rounded-[30px] bg-white p-2 sm:p-2.5 text-[28px] sm:text-[2rem] leading-none">😩</div>
+          <p class="text-figma-quote text-sm sm:text-base leading-5 sm:leading-6">"A customer messaged asking about their order and I couldn't remember the details."</p>
         </div>
-        <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border border-slate-100">
-          <span class="text-2xl">📱</span>
-          <p class="text-slate-700">"I keep scrolling back through DMs trying to find who paid and who didn't."</p>
-        </div>
-        <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border border-slate-100">
-          <span class="text-2xl">📋</span>
-          <p class="text-slate-700">"I started a spreadsheet. I stopped updating it after the first week."</p>
+        <div class="flex gap-3 sm:gap-6 items-center rounded-full px-2 sm:px-[14px] py-3 sm:py-4">
+          <div class="shrink-0 rounded-[30px] bg-white p-2 sm:p-2.5 text-[28px] sm:text-[2rem] leading-none">📋</div>
+          <p class="text-figma-quote text-sm sm:text-base leading-5 sm:leading-6">"I started a spreadsheet with orders.<br class="hidden sm:inline" /> I stopped updating it after the first week."</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ═══════════════════════════════════════════════
-       HOW IT WORKS
-  ═══════════════════════════════════════════════ -->
-  <section class="px-6 py-16 bg-white">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-        Works the way you already work.
-      </h2>
-      <p class="text-slate-500 mb-12">No setup. No integrations. No new behavior to learn.</p>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Step 1 -->
-        <div class="flex flex-col items-center text-center">
-          <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center text-2xl mb-4">📸</div>
-          <h3 class="font-semibold text-slate-900 mb-2">Screenshot</h3>
-          <p class="text-slate-500 text-sm">Take a screenshot of your Instagram DM, WhatsApp, or any chat where an order came in.</p>
-        </div>
-        <!-- Step 2 -->
-        <div class="flex flex-col items-center text-center">
-          <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center text-2xl mb-4">✨</div>
-          <h3 class="font-semibold text-slate-900 mb-2">We read it</h3>
-          <p class="text-slate-500 text-sm">Our AI extracts the customer name, item, quantity, price, address, and deadline in seconds.</p>
-        </div>
-        <!-- Step 3 -->
-        <div class="flex flex-col items-center text-center">
-          <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center text-2xl mb-4">✅</div>
-          <h3 class="font-semibold text-slate-900 mb-2">Order tracked</h3>
-          <p class="text-slate-500 text-sm">Review the draft in one tap, confirm, and track it from Received → In Production → Shipped → Paid.</p>
-        </div>
+  <section id="how-it-works" class="relative z-10 px-4 sm:px-6 py-14 sm:py-20 md:py-24">
+    <div class="max-w-[1170px] mx-auto flex flex-col gap-8 sm:gap-10 items-center">
+      <div class="text-center space-y-4 max-w-3xl">
+        <h2 class="text-figma-ink font-semibold text-[32px] sm:text-4xl">Works the way you already work</h2>
+        <p class="text-figma-gray900 font-semibold text-sm sm:text-base">No setup. No integrations. No new behavior to learn.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       OUTCOME BULLETS
-  ═══════════════════════════════════════════════ -->
-  <section class="bg-slate-900 text-white px-6 py-16">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">
-        What you get
-      </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="flex items-start gap-3">
-          <span class="text-brand-500 font-bold text-lg">→</span>
-          <p>Never forget a follow-up again — every order has a status and a next step.</p>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-brand-500 font-bold text-lg">→</span>
-          <p>Know instantly who hasn't paid — no more scrolling back through DMs.</p>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-brand-500 font-bold text-lg">→</span>
-          <p>All your orders in one place — from any DM app, not just Instagram.</p>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-brand-500 font-bold text-lg">→</span>
-          <p>No CRM setup, no API permissions, no account risk — just screenshot and go.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       EARLY ACCESS FORM
-  ═══════════════════════════════════════════════ -->
-  <section id="early-access" class="px-6 py-16 bg-white">
-    <div class="max-w-lg mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center text-slate-900 mb-3">
-        Get early access
-      </h2>
-      <p class="text-center text-slate-500 mb-8">
-        Free during early access. We'll reach out personally before launch.
-      </p>
-
-      <!-- FORM — replace action URL with your Formspree endpoint -->
-      <!-- Sign up free at formspree.io, create a form, copy the endpoint -->
-      <form
-        action="https://formspree.io/f/YOUR_FORM_ID"
-        method="POST"
-        class="space-y-5"
-      >
-
-        <!-- Email -->
-        <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1" for="email">Your email *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="you@example.com"
-            class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 bg-white"
-          />
-        </div>
-
-        <!-- Q1: How do you currently track orders -->
-        <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1" for="tracking">
-            How do you currently track your DM orders? *
-          </label>
-          <select
-            id="tracking"
-            name="tracking_method"
-            required
-            class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 bg-white"
-          >
-            <option value="" disabled selected>Choose one…</option>
-            <option value="memory">I remember them (in my head)</option>
-            <option value="camera_roll">Screenshots in my camera roll</option>
-            <option value="notes">Notes app or text document</option>
-            <option value="spreadsheet">Spreadsheet</option>
-            <option value="crm_tool">A CRM or order management tool</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <!-- Q2: Order volume -->
-        <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1" for="volume">
-            How many DM orders or inquiries do you receive per week? *
-          </label>
-          <select
-            id="volume"
-            name="order_volume"
-            required
-            class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 bg-white"
-          >
-            <option value="" disabled selected>Choose one…</option>
-            <option value="1_5">1–5 per week</option>
-            <option value="6_20">6–20 per week</option>
-            <option value="21_50">21–50 per week</option>
-            <option value="50_plus">More than 50 per week</option>
-          </select>
-        </div>
-
-        <!-- Q3: Primary channel -->
-        <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1" for="channel">
-            Where do you primarily receive orders? *
-          </label>
-          <select
-            id="channel"
-            name="primary_channel"
-            required
-            class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 bg-white"
-          >
-            <option value="" disabled selected>Choose one…</option>
-            <option value="instagram_dm">Instagram DMs</option>
-            <option value="whatsapp">WhatsApp</option>
-            <option value="facebook">Facebook Messenger</option>
-            <option value="multiple">Multiple apps</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <!-- Q4: Screenshot behavior validation -->
-        <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1">
-            Have you ever taken a screenshot of a DM to remember an order? *
-          </label>
-          <div class="flex gap-4">
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="radio" name="screenshots_orders" value="yes" required class="text-brand-500" />
-              <span class="text-slate-700">Yes</span>
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="radio" name="screenshots_orders" value="no" required class="text-brand-500" />
-              <span class="text-slate-700">No</span>
-            </label>
+      <div class="rounded-[20px] bg-figma-primary800 shadow-howCard w-full px-4 sm:px-10 py-6 sm:py-7 md:py-8">
+        <div class="flex flex-col md:flex-row md:items-stretch md:justify-center gap-7 sm:gap-8 md:gap-4 lg:gap-10">
+          <div class="flex flex-1 flex-col items-center text-center gap-4 sm:gap-5 px-2 py-2 sm:py-3 max-w-[240px] mx-auto">
+            <div class="flex h-[58px] w-[58px] sm:h-[67px] sm:w-[67px] items-center justify-center rounded-full bg-figma-primary600 border border-dashed border-figma-primary200 p-2.5 sm:p-3"><img src="assets/4392828b68982beeaef3881984c1aa83de05ba27.svg" alt="" class="h-9 w-9 sm:h-[41px] sm:w-[41px]" /></div>
+            <h3 class="text-figma-primary200 font-semibold text-[22px] sm:text-2xl leading-5">Screenshot</h3>
+            <p class="text-figma-primary200 text-sm sm:text-base leading-5 sm:leading-6">Take a screenshot of your Instagram DM, WhatsApp, or any chat where an order came in.</p>
+          </div>
+          <div class="hidden md:flex items-center justify-center px-1" aria-hidden="true"><img src="assets/ace592bc7f28750b3b55fc4738414c481a6ccb40.svg" alt="" class="h-[180px] w-px max-w-[2px] rotate-90 md:rotate-0 scale-y-[-1] opacity-90" /></div>
+          <div class="flex flex-1 flex-col items-center text-center gap-4 sm:gap-5 px-2 py-2 sm:py-3 max-w-[260px] mx-auto">
+            <div class="flex h-[58px] w-[58px] sm:h-[67px] sm:w-[67px] items-center justify-center rounded-full bg-figma-primary600 border border-dashed border-figma-primary200 p-2.5 sm:p-3"><img src="assets/99de214e35a8f9017c904e780a65ea690803216c.svg" alt="" class="h-9 w-9 sm:h-[41px] sm:w-[41px]" /></div>
+            <h3 class="text-figma-primary200 font-semibold text-[22px] sm:text-2xl leading-5">Send to SnapOrder</h3>
+            <p class="text-figma-primary200 text-sm sm:text-base leading-5 sm:leading-6">Our AI extracts the customer name, item, quantity, price, address, and deadline in seconds.</p>
+          </div>
+          <div class="hidden md:flex items-center justify-center px-1" aria-hidden="true"><img src="assets/ace592bc7f28750b3b55fc4738414c481a6ccb40.svg" alt="" class="h-[180px] w-px max-w-[2px] rotate-90 md:rotate-0 opacity-90" /></div>
+          <div class="flex flex-1 flex-col items-center text-center gap-4 sm:gap-5 px-2 py-2 sm:py-3 max-w-[260px] mx-auto">
+            <div class="flex h-[58px] w-[58px] sm:h-[67px] sm:w-[67px] items-center justify-center rounded-full bg-figma-primary600 border border-dashed border-figma-primary200 p-2.5 sm:p-3"><img src="assets/947b26accdf48b2d23df47ea0cddb34e3c81325a.svg" alt="" class="h-9 w-9 sm:h-[41px] sm:w-[41px]" /></div>
+            <h3 class="text-figma-primary200 font-semibold text-[22px] sm:text-2xl leading-5">Order tracked</h3>
+            <p class="text-figma-primary200 text-sm sm:text-base leading-5 sm:leading-6">"Your order is now structured and saved - customer, item, price, deadline, all in one place."</p>
           </div>
         </div>
-
-        <!-- UTM source hidden field (for tracking) -->
-        <input type="hidden" name="_source" id="utm_source" value="" />
-        <input type="hidden" name="_medium" id="utm_medium" value="" />
-        <input type="hidden" name="_campaign" id="utm_campaign" value="" />
-        <input type="hidden" name="_subject" value="SnapOrder early access signup" />
-
-        <!-- Submit -->
-        <button
-          type="submit"
-          class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-lg py-4 rounded-xl transition-colors duration-200 shadow-md"
-        >
-          Get early access — it's free
-        </button>
-
-      </form>
+      </div>
     </div>
   </section>
-
-  <!-- ═══════════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════════ -->
-  <footer class="bg-slate-900 text-slate-400 text-center text-sm px-6 py-8">
-    <p>SnapOrder &mdash; Built for Instagram sellers</p>
-  </footer>
-
-  <!-- ═══════════════════════════════════════════════
-       UTM CAPTURE SCRIPT
-  ═══════════════════════════════════════════════ -->
-  <script>
-    // Capture UTM parameters from URL and inject into hidden form fields
-    const params = new URLSearchParams(window.location.search);
-    const fields = { utm_source: '_source', utm_medium: '_medium', utm_campaign: '_campaign' };
-    Object.entries(fields).forEach(([param, fieldId]) => {
-      const el = document.getElementById(fieldId);
-      if (el && params.get(param)) el.value = params.get(param);
-    });
-
-    // Formspree success redirect
-    const form = document.querySelector('form');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        form.innerHTML = `
-          <div class="text-center py-8">
-            <div class="text-5xl mb-4">🎉</div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-2">You're on the list!</h3>
-            <p class="text-slate-500">We'll reach out personally before we launch. Thank you.</p>
-          </div>
-        `;
-      } else {
-        alert('Something went wrong. Please email us at hello@snaporder.co');
-      }
-    });
-  </script>
-
+  <section id="what-you-get" class="relative z-10 bg-figma-primary800 py-12 sm:py-14 md:py-16 px-4 sm:px-6">
+    <div class="max-w-[960px] mx-auto flex flex-col items-center gap-8 sm:gap-12">
+      <h2 class="text-white font-semibold text-[32px] sm:text-4xl text-center">What you get</h2>
+      <div class="w-full grid sm:grid-cols-2 gap-x-8 sm:gap-x-10 gap-y-6 sm:gap-y-10">
+        <div class="flex gap-2.5 sm:gap-3 items-start"><img src="assets/f690aa62488123c14843acf45bfc9bf70fcf1fcd.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-0.5" /><p class="text-white text-sm sm:text-base leading-5 sm:leading-6">Never forget a follow-up again — every order has a status and a next step.</p></div>
+        <div class="flex gap-2.5 sm:gap-3 items-start"><img src="assets/f690aa62488123c14843acf45bfc9bf70fcf1fcd.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-0.5" /><p class="text-white text-sm sm:text-base leading-5 sm:leading-6">Know instantly who hasn't paid — no more scrolling back through DMs.</p></div>
+        <div class="flex gap-2.5 sm:gap-3 items-start"><img src="assets/f690aa62488123c14843acf45bfc9bf70fcf1fcd.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-0.5" /><p class="text-white text-sm sm:text-base leading-5 sm:leading-6">All your orders in one place — from any DM app, not just Instagram.</p></div>
+        <div class="flex gap-2.5 sm:gap-3 items-start"><img src="assets/f690aa62488123c14843acf45bfc9bf70fcf1fcd.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-0.5" /><p class="text-white text-sm sm:text-base leading-5 sm:leading-6">No CRM setup, no API permissions, no account risk — just screenshot and go.</p></div>
+      </div>
+      <a href="#what-you-get" class="inline-flex items-center gap-3 sm:gap-5 rounded-full bg-white hover:bg-slate-100 text-figma-ink font-semibold text-sm sm:text-base px-5 sm:px-[33px] py-2.5 sm:py-3.5 transition-colors"><span>Get early access - it's free</span><img src="assets/b4495854f428e8e86e3f5fbf9d2424497ae7900a.svg" alt="" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+    </div>
+  </section>
+  <div class="h-14 sm:h-[84px] md:h-[126px]"></div>
+  <footer class="relative z-10 bg-figma-gray900 text-white min-h-[150px] sm:h-[198px] py-8 px-4 sm:px-6 flex items-center justify-center"><p class="text-center font-semibold text-base sm:text-lg leading-6 sm:leading-7">SnapOrder – Built for sellers who sell through messages.</p></footer>
 </body>
 </html>

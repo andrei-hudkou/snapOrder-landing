@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 48 45.6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="telegram" style="mix-blend-mode:plus-lighter" opacity="0.5" filter="url(#filter0_f_1_4748)">
+<path id="vector" d="M33.5839 15.8505C33.7335 14.884 32.8145 14.1211 31.9551 14.4984L14.8378 22.0138C14.2215 22.2844 14.2666 23.2179 14.9058 23.4215L18.4358 24.5456C19.1095 24.7602 19.839 24.6492 20.4273 24.2428L28.386 18.7443C28.626 18.5785 28.8876 18.9198 28.6825 19.1312L22.9537 25.0376C22.398 25.6105 22.5083 26.5814 23.1768 27.0006L29.5908 31.0227C30.3101 31.4739 31.2356 31.0207 31.3702 30.1514L33.5839 15.8505Z" fill="var(--fill-0, white)"/>
+</g>
+<defs>
+<filter id="filter0_f_1_4748" x="-8.4" y="-10.8" width="67.2" height="67.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="7.2" result="effect1_foregroundBlur_1_4748"/>
+</filter>
+</defs>
+</svg>
