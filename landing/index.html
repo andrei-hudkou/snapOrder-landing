@@ -8,6 +8,7 @@
   <meta property="og:title" content="All your orders from DMs — tracked in one place" />
   <meta property="og:description" content="Your orders come in through messages. Screenshot the conversation — we'll structure it for you." />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="snaporder:meta-pixel-id" content="1884237055475326" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -44,6 +45,31 @@
     input:focus, select:focus, textarea:focus { outline: 2px solid #6941c6; outline-offset: 2px; }
     input[type="radio"] { accent-color: #6941c6; }
   </style>
+  <script>
+    (function () {
+      const pixelMeta = document.querySelector('meta[name="snaporder:meta-pixel-id"]');
+      const pixelId = pixelMeta ? pixelMeta.getAttribute('content') : '';
+      if (!pixelId || pixelId === 'YOUR_META_PIXEL_ID') return;
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = true;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', pixelId);
+      window.fbq('track', 'PageView');
+    })();
+  </script>
 </head>
 <body class="font-sans antialiased bg-figma-bg text-figma-gray900 overflow-x-hidden">
   <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
@@ -55,7 +81,7 @@
         <a href="#how-it-works" class="hover:text-figma-primary transition-colors py-2">How it works</a>
         <a href="#what-you-get" class="hover:text-figma-primary transition-colors py-2">What you get</a>
       </nav>
-      <a href="#what-you-get" class="rounded-full bg-figma-primary hover:bg-[#5b32b3] text-white font-semibold text-sm sm:text-base px-5 sm:px-[39px] py-2.5 sm:py-3.5 transition-colors shadow-sm shrink-0">Get early access</a>
+      <a href="#" data-open-newsletter class="inline-flex justify-center items-center rounded-full bg-figma-primary hover:bg-[#5b32b3] text-white font-semibold text-sm sm:text-base h-[42px] px-6 transition-colors shadow-sm shrink-0">Get early access</a>
     </div>
   </header>
   <section class="relative z-10 max-w-[1264px] mx-auto px-4 sm:px-6 pt-2 sm:pt-4 pb-12 sm:pb-16 md:pb-20">
@@ -65,8 +91,8 @@
       <div class="relative w-full max-w-[440px] sm:max-w-[420px] lg:max-w-[576px] mx-auto shrink-0 justify-self-center lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:mx-0 lg:justify-self-end">
         <img src="assets/a044f8a82dc67c8080c654a092babb1359b9acdf.png" alt="Seller and DM channel icons" class="w-full h-auto pointer-events-none select-none" />
       </div>
-      <div class="pt-1 lg:col-start-1 lg:row-start-3 lg:pl-[10px]">
-        <a href="#what-you-get" class="inline-flex items-center gap-3 sm:gap-5 rounded-full bg-figma-ink hover:bg-[#0f1728] text-white font-semibold text-sm sm:text-base px-5 sm:px-[33px] py-2.5 sm:py-3.5 transition-colors"><span>Get early access - it's free</span><span class="inline-flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center" aria-hidden="true"><img src="assets/8e6b11f931dd5fada05dd716a377085a27ccdc8a.svg" alt="" class="h-5 w-5 sm:h-6 sm:w-6" /></span></a>
+      <div class="-mt-1 flex justify-center lg:justify-start items-center lg:col-start-1 lg:row-start-3 lg:pl-[10px]">
+        <a href="#" data-open-newsletter class="inline-flex items-center gap-3 sm:gap-5 rounded-full bg-figma-ink hover:bg-[#0f1728] text-white font-semibold text-sm sm:text-base px-5 sm:px-[33px] py-2.5 sm:py-3.5 transition-colors"><span>Get early access</span><span class="inline-flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center" aria-hidden="true"><img src="assets/8e6b11f931dd5fada05dd716a377085a27ccdc8a.svg" alt="" class="h-5 w-5 sm:h-6 sm:w-6" /></span></a>
       </div>
     </div>
   </section>
@@ -127,10 +153,110 @@
         <div class="flex gap-2.5 sm:gap-3 items-start"><img src="assets/f690aa62488123c14843acf45bfc9bf70fcf1fcd.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-0.5" /><p class="text-white text-sm sm:text-base leading-5 sm:leading-6">All your orders in one place — from any DM app, not just Instagram.</p></div>
         <div class="flex gap-2.5 sm:gap-3 items-start"><img src="assets/f690aa62488123c14843acf45bfc9bf70fcf1fcd.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-0.5" /><p class="text-white text-sm sm:text-base leading-5 sm:leading-6">No CRM setup, no API permissions, no account risk — just screenshot and go.</p></div>
       </div>
-      <a href="#what-you-get" class="inline-flex items-center gap-3 sm:gap-5 rounded-full bg-white hover:bg-slate-100 text-figma-ink font-semibold text-sm sm:text-base px-5 sm:px-[33px] py-2.5 sm:py-3.5 transition-colors"><span>Get early access - it's free</span><img src="assets/b4495854f428e8e86e3f5fbf9d2424497ae7900a.svg" alt="" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+      <a href="#" data-open-newsletter class="inline-flex items-center gap-3 sm:gap-5 rounded-full bg-white hover:bg-slate-100 text-figma-ink font-semibold text-sm sm:text-base px-5 sm:px-[33px] py-2.5 sm:py-3.5 transition-colors"><span>Get early access</span><img src="assets/b4495854f428e8e86e3f5fbf9d2424497ae7900a.svg" alt="" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
     </div>
   </section>
+  <div id="newsletter-modal" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+    <div data-modal-overlay class="absolute inset-0 bg-slate-950/55 backdrop-blur-[1px]"></div>
+    <div class="relative z-10 flex min-h-full items-center justify-center p-4">
+      <div class="w-full max-w-md rounded-2xl bg-white p-6 sm:p-7 shadow-2xl border border-slate-200">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="text-figma-ink text-xl sm:text-2xl font-semibold">Get product updates</h3>
+            <p class="mt-2 text-slate-600 text-sm sm:text-base">Leave your email to get the newsletter and release updates.</p>
+          </div>
+          <button type="button" data-close-modal class="shrink-0 rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700" aria-label="Close">
+            <span aria-hidden="true">✕</span>
+          </button>
+        </div>
+        <form id="newsletter-form" action="https://formspree.io/f/xreolekj" method="POST" class="mt-5 space-y-4">
+          <div>
+            <label for="newsletter-email" class="block text-sm font-medium text-slate-700 mb-1.5">Email</label>
+            <input id="newsletter-email" name="email" type="email" required placeholder="you@example.com" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder:text-slate-400" />
+          </div>
+          <input type="hidden" name="utm_source" id="utm_source" value="" />
+          <input type="hidden" name="utm_medium" id="utm_medium" value="" />
+          <input type="hidden" name="utm_campaign" id="utm_campaign" value="" />
+          <input type="hidden" name="utm_content" id="utm_content" value="" />
+          <input type="hidden" name="_subject" value="SnapOrder newsletter signup" />
+          <button type="submit" class="w-full rounded-full bg-figma-primary hover:bg-[#5b32b3] text-white font-semibold text-sm sm:text-base px-5 py-3 transition-colors">Notify me on release</button>
+        </form>
+        <p id="newsletter-success" class="hidden mt-4 rounded-xl bg-emerald-50 text-emerald-700 text-sm px-4 py-3">Thanks! You're subscribed and will get product updates.</p>
+      </div>
+    </div>
+  </div>
   <div class="h-14 sm:h-[84px] md:h-[126px]"></div>
   <footer class="relative z-10 bg-figma-gray900 text-white min-h-[150px] sm:h-[198px] py-8 px-4 sm:px-6 flex items-center justify-center"><p class="text-center font-semibold text-base sm:text-lg leading-6 sm:leading-7">SnapOrder – Built for sellers who sell through messages.</p></footer>
+  <script>
+    const trackEvent = (eventName, payload = {}) => {
+      if (typeof window.fbq === 'function') window.fbq('trackCustom', eventName, payload);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: eventName, ...payload });
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach((key) => {
+      const hidden = document.getElementById(key);
+      if (hidden && params.get(key)) hidden.value = params.get(key);
+    });
+
+    const modal = document.getElementById('newsletter-modal');
+    const openButtons = document.querySelectorAll('[data-open-newsletter]');
+    const closeButtons = document.querySelectorAll('[data-close-modal]');
+    const overlay = modal ? modal.querySelector('[data-modal-overlay]') : null;
+    const form = document.getElementById('newsletter-form');
+    const success = document.getElementById('newsletter-success');
+    const emailInput = document.getElementById('newsletter-email');
+
+    const openModal = () => {
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('overflow-hidden');
+      trackEvent('modal_open', { source: 'cta' });
+      setTimeout(() => emailInput && emailInput.focus(), 0);
+    };
+
+    const closeModal = () => {
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('overflow-hidden');
+    };
+
+    openButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        trackEvent('cta_click', { cta_text: (button.textContent || '').trim().slice(0, 64) });
+        openModal();
+      });
+    });
+
+    closeButtons.forEach((button) => button.addEventListener('click', closeModal));
+    if (overlay) overlay.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) closeModal();
+    });
+
+    if (form) {
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' },
+          });
+          if (!response.ok) throw new Error('Submission failed');
+          form.classList.add('hidden');
+          if (success) success.classList.remove('hidden');
+          trackEvent('email_submit_success', { method: 'formspree_modal' });
+        } catch (_) {
+          alert('Could not submit right now. Please try again in a moment.');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
